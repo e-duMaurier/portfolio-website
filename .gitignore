@@ -1,8 +1,7 @@
 # Temporary lock file while building
-/.hugo_build.lock
+.hugo_build.lock
 
 # Generated files by hugo
-/public/
-/resources/_gen/
-/assets/jsconfig.json
+public/
+resources/_gen/
 hugo_stats.json
