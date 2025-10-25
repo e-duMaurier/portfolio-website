@@ -1,18 +1,13 @@
 <!DOCTYPE html>
 <html lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">	
-  {{ if .IsHome }}
-    <title>{{ .Site.Title }}</title>
-  {{ else }}
-    <title>{{ .Title }} | {{ .Site.Title }}</title>
-  {{ end }}
+  {{ partial "head.html" . }}
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
   <header>
     {{ partial "header.html" . }}
   </header>
-  <main>
+  <main class="flex-grow-1">
     {{ block "main" . }}{{ end }}
   </main>
   <footer>
