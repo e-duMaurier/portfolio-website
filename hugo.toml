@@ -1,4 +1,42 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-uk'
-title = 'My Portfolio'
+title = 'Duma Labs'
 theme = 'portfolio'
+
+# --- Menu Configuration ---
+[menu]
+  [[menu.main]]
+    identifier = "about"
+    name = "About Me"
+    url = "/about/"
+    weight = 10
+
+  [[menu.main]]
+    identifier = "blog"
+    name = "Blog"
+    url = "/blog/"
+    weight = 20
+
+  [[menu.main]]
+    identifier = "ttrpg"
+    name = "TTRPG"
+    url = "/ttrpg/"
+    weight = 30
+
+  [[menu.main]]
+    identifier = "tog"
+    name = "Photography"
+    url = "/tog/"
+    weight = 40
+
+  [[menu.main]]
+    identifier = "cybersec"
+    name = "Cybersecurity"
+    # IMPORTANT: The parent item for the dropdown should not have a URL
+    weight = 50
+
+  [[menu.main]] # Child item (Write-Ups)
+    name = "Write-Ups"
+    url = "/cybersec/writeups/"
+    parent = "cybersec" # Connects it to the "Cybersecurity" parent
+    weight = 10
