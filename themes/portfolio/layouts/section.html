@@ -1,6 +1,6 @@
 {{ define "main" }}
 <div class="container my-5">
-    <h1 class="text-center">{{ .Title | default "Blog Posts" }}</h1>
+    <h1 class="text-center">{{ .Title }}</h1>
 	{{ if not .Paginator.Pages }}
     <p class="text-center lead">There is nothing here yet, please come back later.</p>
     {{ else }}
