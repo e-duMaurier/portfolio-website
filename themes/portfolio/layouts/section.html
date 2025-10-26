@@ -1,10 +1,18 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
-  {{ .Content }}
-  {{ range .Pages }}
-    <section>
-      <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-      {{ .Summary }}
-    </section>
-  {{ end }}
+<div class="container my-5">
+    <h1 class="text-center">{{ .Title | default "Blog Posts" }}</h1>
+	{{ if not .Paginator.Pages }}
+    <p class="text-center lead">There is nothing here yet, please come back later.</p>
+    {{ else }}
+    <ul class="list-unstyled">
+        {{ range .Paginator.Pages }}
+        <li class="mb-3">
+            <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+            <small class="text-muted">{{ .Date.Format "January 2, 2006" }}</small>
+            <p>{{ .Summary | plainify | truncate 150 }}</p>
+        </li>
+        {{ end }}
+    </ul>
+    {{ end }}
+</div>
 {{ end }}
