@@ -1,5 +1,5 @@
 +++
-title = "{{ replace .Name "-" " " | title }}"
+title = '{{ replace .Name "-" " " | title }}'
 description = "A brief summary of your blog post for SEO or listing pages"
 date = {{ .Date }}
 date_taken = {{ .Date }}

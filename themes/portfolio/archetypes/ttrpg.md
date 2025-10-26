@@ -1,9 +1,10 @@
 +++
-title = "{{ replace .Name "-" " " | title }}"
+title = '{{ replace .Name "-" " " | title }}'
 description = "A summary of this TTRPG session or resource"
 date = {{ .Date }}
+lastmod = {{ .Date }}
 game = "" # e.g., "Dungeons & Dragons 5e", "Call of Cthulhu"
-publisher = "" # e.g. "Free League Publishing", "Piazo", "Wizards of the Coast"
+publisher = "" # e.g. "Free League Publishing", "Paizo", "Wizards of the Coast"
 campaign = "" # e.g., "Curse of Strahd", "Masks of Nyarlathotep"
 characters = [] # e.g., ["Sir Reginald", "Elara Shadowbrook"]
 tags = []
