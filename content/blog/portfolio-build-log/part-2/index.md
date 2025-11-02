@@ -5,13 +5,13 @@ description = "Portfolio Build Log: Installing Hugo and Creating the Core Projec
 date = 2025-10-26T17:00:13Z
 lastmod = 2025-10-26T17:00:13Z
 categories = ["blog", "hugo"]
-tags = ["potfolio", "build-log"]
+tags = ["portfolio", "build-log"]
 draft = false
 +++
 
-Hugo is available in three editions: **standard**, **extended**, and **extended/deploy**. While the standard is enough for core functionality, the deploy version is the same as the extended edition but includes extras for deploying directly to online storage like AWS S3 or Google Cloud Storage buckets.
-
 I chose Hugo because it is lightweight, but powerful. It is fast and flexible in its modules and frameworks, and it includes an embedded web server that can be used to quickly start and stop the site when reviewing changes.
+
+Hugo is available in three editions: **standard**, **extended**, and **extended/deploy**. While the standard is enough for core functionality, the deploy version is the same as the extended edition but includes extras for deploying directly to online storage like AWS S3 or Google Cloud Storage buckets.
 
 While the initial configuration of a new Hugo site may take a little work, once it is set, new content can be quickly added using Markdown. As I use a range of note-taking apps like Notesnook and Obsidian, it makes it very easy to create content directly from notes I’ve already created. When Hugo builds the site, it then turns all this Markdown content into ready-to-host web pages.
 
@@ -19,7 +19,7 @@ With all that, plus a great user base, a wide range of content, and modules to h
 
 ---
 
-### 1. Installing Hugo
+### Installing Hugo
 
 There are several options for installing Hugo, especially on Linux. There are prebuilt binaries, package managers like Snap or Homebrew, repository packages, and it can be built from source.
 
@@ -75,7 +75,7 @@ hugo v0.151.2-a3574f6f70c9b272e3de53cf976018ee3ff16fd1+extended linux/amd64 Buil
 
 ---
 
-### 2. Creating the Core Project Structure
+### Creating the Core Project Structure
 
 Hugo might lack the fancy GUIs a lot of other applications have, but for a static site generator, it is very simple in its functions. The advantage of a command-line based tool is that single commands can offer multiple functions. The `new` command in Hugo can be used to create new content, themes, or, in this case, a new site.
 
@@ -129,11 +129,13 @@ However, since I am running this on a headless VM on my network, I can't access 
 hugo server --bind 10.40.0.66 -D
 ```
 
-Accessing the page in a browser at this point still results in a 'Page Not Found' message. The Hugo webserver is running, but there is nothing for it to generate yet—and for that, I needed to set a theme.
+Accessing the page in a browser at this point still results in a 'Page Not Found' message. The Hugo webserver is running, but there is nothing for it to generate yet, and for that, I needed to set a theme.
+
+![Page Not Found message in web browser](./2-page-not-found.png)
 
 ---
 
-### 3. Choosing and Implementing the Theme
+### Choosing and Implementing the Theme
 
 Themes in Hugo are a very versatile feature and can initially feel overwhelming. Apart from the many great free and premium themes already out there, there are several different methods of applying them, including:
 
@@ -158,7 +160,7 @@ With my Ubuntu VM prepped, and the Hugo site structure created, the project is f
 
 ---
 
-### 1. Preparing the Local Git Repository
+### Preparing the Local Git Repository
 
 I navigated into the main project folder I created in Part 3 and initialised Git.
 
@@ -171,7 +173,7 @@ The `git init` command simply creates a hidden `.git` directory inside the proje
 
 ---
 
-### 2. Ignoring Unnecessary Files
+### Ignoring Unnecessary Files
 
 Adopting a modern, efficient workflow means excluding automatically generated files from version control. I need to tell Git to ignore these directories by creating a **`.gitignore`** file.
 
@@ -195,15 +197,17 @@ resources/
 
 ---
 
-### 3. Creating the Remote Repository on GitHub
+### Creating the Remote Repository on GitHub
 
 With the local repository ready, the next step was to create a remote destination for the code. I logged into GitHub and from the dashboard, created a new, empty repository named `portfolio-website`.
+
+![Adding a new repository in GitHub](./2-add-new-repo.png)
 
 I made sure to create it without a `README`, a `license`, or a `.gitignore` file. Since I was pushing the files from my local VM, keeping the remote repository completely blank prevented any potential conflicts with the first push, and I could create and add these files later.
 
 ---
 
-### 4. The Initial Commit and Push
+### The Initial Commit and Push
 
 Now that everything was organized, it was time for the first commit.
 
@@ -276,17 +280,17 @@ git push -u origin main
 
 A quick check of the GitHub repository confirmed that the files were safely backed up and under version control. Not all the directories showed, though, as Git does not track empty directories; these will appear automatically once I add files to them.
 
+![Commit details on GitHub repository](./2-check-repo-push.png)
+
 ---
 
-### What's Next?
+## What's Next?
 
 The core project structure is safe, secure, and backed up on GitHub, ready for development.
 
-The immediate next step is to start working on creating a custom theme. **Part 5** will shift focus entirely to **Creating the Custom Hugo Theme**, where I'll begin the process of translating my vision into HTML and CSS.
+The immediate next step is to start working on creating a custom theme, and once the base site is functional, I plan to use GitHub Projects with a Kanban board to track future features, bugs, and design improvements, helping me manage the portfolio's continuous growth.
 
-Looking further ahead, once the base site is functional, I plan to leverage GitHub Projects with a Kanban board to track future features, bugs, and design improvements, helping me manage the portfolio's continuous growth.
-
-### References
+## References
 - [Hugo](https://gohugo.io/)
 - [Notesnook](https://notesnook.com/)
 - [Obsidian](https://obsidian.md/)

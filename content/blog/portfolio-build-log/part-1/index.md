@@ -5,7 +5,7 @@ description = "Portfolio Build Log: Defining the Tech Stack and Building the Ubu
 date = 2025-10-26T16:43:42Z
 lastmod = 2025-10-26T16:43:42Z
 categories = ["blog", "hugo"]
-tags = ["potfolio", "build-log"]
+tags = ["portfolio", "build-log"]
 draft = false
 +++
 
@@ -15,7 +15,7 @@ My portfolio website began as a simple idea, born while I was following the [Lev
 
 ---
 
-## 1. The Technology Stack: What I Chose
+## The Technology Stack: What I Chose
 
 I wanted a setup that was simple, efficient, and easy to maintain. Here is the breakdown of what I chose and my reasoning:
 
@@ -36,7 +36,7 @@ For hosting, I chose a Virtual Private Server (VPS) running Ubuntu 24.04. I deci
 
 ---
 
-## 2. My Development Setup
+## My Development Setup
 
 My everyday personal computer runs Arch Linux, which is my home base for all my work.
 
@@ -48,7 +48,7 @@ This investment in starting with a clean slate, while has a lot to do at the sta
 
 ---
 
-## 3. Configuring the Ubuntu Dev VM: The Prerequisites
+## Configuring the Ubuntu Dev VM: The Prerequisites
 
 Since I started with a minimal VM install, I needed to get all the core tools in place, and whenever I set up any new VM, I always like to make sure that the installation is update, before I start with installing, or configuring anything.
 
@@ -94,6 +94,10 @@ cat ~/.ssh/gitdev.pub
 ```
 
 Then I needed to log in to GitHub, to **Settings**, and then **SSH and GPG keys**, and then click on **'New SSH Key'**. I copied the public key details into the Key text box, and gave it an easy-to-identify Title, and set the Key Type to **Authentication Key**
+
+![GitHub Add New Key](./1-add-new-key.png)
+
+![GitHub SSH Keys](./1-git-ssh-key.png)
 
 This establishes a trust that allows my VM to push code without me needing to type a password every single time.
 
@@ -177,7 +181,7 @@ go version
 
 ---
 
-## 4. What's Next?
+## What's Next?
 
 With the editing tools, Git, Go, and my secure SSH keys all configured, my Ubuntu Dev VM is officially prepped and ready for action! The next step was is to install Hugo and actually create the initial project structure, and begin the theme design.
 
