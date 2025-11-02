@@ -35,6 +35,6 @@ jobs:
           key: ${{ secrets.VPS_WEB_DEPLOY_KEY }}
           port: 22
           
-          script: |
-            REMOTE_DIR="${{ secrets.VPS_DEPLOY_PATH }}"
-            rsync -avz --delete public/ $REMOTE_DIR
+          sync: true
+          source: "public/"
+          target: "${{ secrets.VPS_DEPLOY_PATH }}"
