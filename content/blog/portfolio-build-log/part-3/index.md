@@ -630,6 +630,7 @@ The main foundations for the site are done. I have frontmatter set for new conte
 However, this would be a little different to my last portfolio, where I published the site locally, then had GitHub copy the contents of the `public` directory to my VPS, this time the Action would build the site in GitHub, then push this to my VPS.
 
 ## References
+
 - [Free Bootstrap Builder](https://bootstrap.build/)
 - [Let's Create a New Hugo Theme](https://pakstech.com/blog/create-hugo-theme/)
 - [Hugo Site Customization](https://bootstrap.hugoblox.com/getting-started/customization/)

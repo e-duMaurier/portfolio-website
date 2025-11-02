@@ -2,6 +2,8 @@ baseURL = 'https://example.org/'
 languageCode = 'en-uk'
 title = 'Duma Labs'
 theme = 'duma-theme'
+relativeURLS = true
+pluralizelisttitles = false
 
 # --- Menu Configuration ---
 [menu]

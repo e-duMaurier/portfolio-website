@@ -291,6 +291,7 @@ The core project structure is safe, secure, and backed up on GitHub, ready for d
 The immediate next step is to start working on creating a custom theme, and once the base site is functional, I plan to use GitHub Projects with a Kanban board to track future features, bugs, and design improvements, helping me manage the portfolio's continuous growth.
 
 ## References
+
 - [Hugo](https://gohugo.io/)
 - [Notesnook](https://notesnook.com/)
 - [Obsidian](https://obsidian.md/)

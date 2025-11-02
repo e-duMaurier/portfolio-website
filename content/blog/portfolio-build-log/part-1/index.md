@@ -186,5 +186,6 @@ go version
 With the editing tools, Git, Go, and my secure SSH keys all configured, my Ubuntu Dev VM is officially prepped and ready for action! The next step was is to install Hugo and actually create the initial project structure, and begin the theme design.
 
 ## References
+
 - [GitHub](https://github.com/)
 - [Go](https://go.dev/)
