@@ -28,13 +28,14 @@ jobs:
         run: hugo --minify
 
       - name: Deploy to VPS
-        uses: appleboy/ssh-action@v1.0.0
+        uses: appleboy/ssh-action@v1.2.2
         with:
           host: ${{ secrets.VPS_IP }}
           username: ${{ secrets.VPS_USER }}
-          key: ${{ secrets.VPS_WEB_DEPLOY_KEY }}
+          key: ${{ secrets.PS_WEB_DEPLOY_KEY }}
           port: 22
           
-          sync: true
-          source: "public/"
-          target: "${{ secrets.VPS_DEPLOY_PATH }}"
+          script: |
+            REMOTE_DIR="${{ secrets.VPS_DEPLOY_PATH }}"
+            
+            rsync -avz --delete -e "ssh -i $HOME/.ssh/id_rsa -o StrictHostKeyChecking=no" public/ ${{ secrets.VPS_USER }}@${{ secrets.VPS_IP }}:$REMOTE_DIR
