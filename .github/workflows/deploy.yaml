@@ -1,4 +1,4 @@
-name: Deploy Hugo Site to VPS via SSH Agent 🔑
+name: Deploy Hugo Site to VPS via SSH Agent
 
 on:
   push:
@@ -44,7 +44,7 @@ jobs:
           host: ${{ secrets.VPS_IP }}
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_WEB_DEPLOY_KEY }}
-          port: 22
+          port: ${{ secrets.VPS_PORT }}
           script: |
             echo "Deployment path content:"
             ls -la ${{ secrets.VPS_DEPLOY_PATH }}
