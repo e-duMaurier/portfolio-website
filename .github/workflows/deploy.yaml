@@ -35,7 +35,6 @@ jobs:
       - name: Sync files with rsync
         run: |
           echo "Starting rsync to VPS..."
-          # The rsync command now works because the SSH key is in the agent (Step 4).
           rsync -avz -e 'ssh -v -p ${{ secrets.VPS_PORT }} -o StrictHostKeyChecking=no' --delete public/ ${{ secrets.VPS_USER }}@${{ secrets.VPS_IP }}:${{ secrets.VPS_DEPLOY_PATH }}
           echo "rsync completed."
 
@@ -45,9 +44,7 @@ jobs:
           host: ${{ secrets.VPS_IP }}
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_WEB_DEPLOY_KEY }}
-          port: ${{ secrets.VPS_PORT }}
+          port: 22
           script: |
             echo "Deployment path content:"
             ls -la ${{ secrets.VPS_DEPLOY_PATH }}
-            # You can add a Docker restart command here if needed:
-            # docker restart your_nginx_container_name
