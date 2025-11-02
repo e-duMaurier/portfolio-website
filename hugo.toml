@@ -1,7 +1,7 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-uk'
 title = 'Duma Labs'
-theme = 'portfolio'
+theme = 'duma-theme'
 
 # --- Menu Configuration ---
 [menu]
@@ -38,5 +38,5 @@ theme = 'portfolio'
   [[menu.main]] # Child item (Write-Ups)
     name = "Write-Ups"
     url = "/cybersec/writeups/"
-    parent = "cybersec" # Connects it to the "Cybersecurity" parent
+    parent = "cybersec" # Connects it to the "cybersec" parent
     weight = 10
