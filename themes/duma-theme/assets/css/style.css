@@ -1,3 +1,22 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+table th,
+table td {
+  padding: 0.75rem;
+  border: 1px solid #DFD7CA;
+  text-align: left;
+}
+table thead th {
+  background-color: #f8f9fa;
+  border-bottom: 2px solid #DFD7CA;
+}
+table tbody td {
+  color: var(--text-primary);
+}
+
 body {
     font-family: 'Inter', sans-serif;
 }
