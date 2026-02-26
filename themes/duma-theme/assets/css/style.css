@@ -45,6 +45,19 @@ a:hover {
   color: #8ecae6;
 }
 
+/* Code blocks - Dark mode */
+.dark code,
+.dark pre,
+.dark pre code {
+  color: #e0e0e0;
+  background-color: #2d2d2d;
+}
+
+/* Navbar toggler - Dark mode */
+.dark .navbar-toggler-icon {
+  filter: invert(1);
+}
+
 .navbar,
 footer {
   border-color: var(--border-color);
