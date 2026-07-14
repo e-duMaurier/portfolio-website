@@ -1,8 +1,11 @@
 baseURL = 'https://example.org/'
-languageCode = 'en-uk'
+locale = 'en-uk'
 title = 'Duma Labs'
 theme = 'duma-theme'
 relativeURLS = true
+
+[security]
+  allowContent = ['^text/html$', '.*']
 pluralizelisttitles = false
 
 # --- Menu Configuration ---

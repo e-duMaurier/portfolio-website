@@ -33,7 +33,7 @@ My passion for technology started early — learning computers on an Acorn Elect
 - BTL1 Level 1 Cyber Security Certification (2024)
 
 ### Projects
-- **Portfolio and Blog Hosting:**Sself‑hosting my personal portfolio and blog to showcase technical work, cybersecurity learning, TTRPG content, and photography.
+- **Portfolio and Blog Hosting:** Self‑hosting my personal portfolio and blog to showcase technical work, cybersecurity learning, TTRPG content, and photography.
 - **Home Lab:** Building and maintaining a lab environment for system administration, virtualisation, and containerisation.
 - **Open-Source Hosting:** Deploying and managing open‑source applications on VMs and cloud VPS.
 - **Containerisation:** Exploring Docker and Kubernetes for application deployment and orchestration.
