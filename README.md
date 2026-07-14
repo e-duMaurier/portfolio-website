@@ -13,6 +13,7 @@ Key technical features include:
 - **Static Site Generation:** Uses Hugo to generate fast, highly secure static HTML/CSS/JS.
 - **Automated Deployment (CI/CD):** Uses **GitHub Actions** and **`rsync` over SSH** for automatic build and deployment upon every push to the `main` branch.
 - **Dockerised Hosting:** Content is served securely from an Nginx web server container managed by Nginx Proxy Manager (NPM).
+- **Theme Preference:** Dark/light mode stored in browser's localStorage (no cookies)
 
 ---
 
