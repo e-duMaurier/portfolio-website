@@ -2,7 +2,6 @@
 title = "Employee of the Year"
 date = 2024-11-15T01:45:33+01:00
 lastmod = 2025-08-02T23:08:03+01:00
-categories = ["Cybersercurity", "Writeup", "BTLO", "CTF-Like", "Challenge"]
 tags = ["Scalpel", "Photorec"]
 platform = "Blue Team Labs Online"
 difficulty = "Easy"

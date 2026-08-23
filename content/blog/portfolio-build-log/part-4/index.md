@@ -4,7 +4,6 @@ subtitle = "Creating the Deployment Pipeline"
 description = "Setting up GitHub Actions for my Blog CI\\CD Pipeline"
 date = 2025-11-02T15:44:04Z
 lastmod = 2025-11-02T15:44:04Z
-categories = ["blog", "hugo"]
 tags = ["portfolio", "build-log"]
 draft = false
 +++

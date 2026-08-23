@@ -4,7 +4,6 @@ subtitle = "Theme Creation & Base Layouts"
 description = "Portfolio Build Log: Initial Theme Creation and Setting Up the Base Templates"
 date = 2025-10-26T21:51:39Z
 lastmod = 2025-10-26T21:51:39Z
-categories = ["blog", "hugo"]
 tags = ["portfolio", "build-log"]
 draft = false
 +++
@@ -479,7 +478,6 @@ title = "{{ replace .Name "-" " " | title }}"
 description = "A brief summary of your blog post for SEO or listing pages"
 date = {{ .Date }}
 lastmod = {{ .Date }}
-categories = [] # ["blogging", "general"]
 tags = [] # ["tech", "opinion"]
 draft = false
 +++
@@ -494,7 +492,6 @@ This complex archetype includes structured fields for cybersecurity documentatio
 title = "{{ replace .Name "-" " " | title }}"
 date = {{ .Date }}
 lastmod = {{ .Date }}
-categories = [""]
 platform = ""                # e.g., "TryHackMe", "Hack The Box", "VulnHub"
 vulnerability_type = []      # e.g., ["SQL Injection", "XSS", "RCE"]
 difficulty = ""              # e.g., "Easy", "Medium", "Hard"

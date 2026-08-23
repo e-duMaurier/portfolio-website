@@ -4,7 +4,6 @@ subtitle = "Tech Stack & Dev VM Setup"
 description = "Portfolio Build Log: Defining the Tech Stack and Building the Ubuntu Dev VM"
 date = 2025-10-26T16:43:42Z
 lastmod = 2025-10-26T16:43:42Z
-categories = ["blog", "hugo"]
 tags = ["portfolio", "build-log"]
 draft = false
 +++

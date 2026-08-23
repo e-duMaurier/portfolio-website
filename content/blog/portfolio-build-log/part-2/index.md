@@ -4,7 +4,6 @@ subtitle = "Hugo Install & Project Creation"
 description = "Portfolio Build Log: Installing Hugo and Creating the Core Project Structure"
 date = 2025-10-26T17:00:13Z
 lastmod = 2025-10-26T17:00:13Z
-categories = ["blog", "hugo"]
 tags = ["portfolio", "build-log"]
 draft = false
 +++

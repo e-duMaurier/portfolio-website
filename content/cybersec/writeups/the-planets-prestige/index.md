@@ -2,7 +2,6 @@
 title = "The Planets Prestige"
 date = 2024-11-10T22:06:33+01:00
 lastmod = 2025-08-02T22:11:39+01:00
-categories = ["Cybersercurity", "Writeup", "BTLO", "CTF-Like", "Challenge"]
 tags = ["Email Client", "Text Editor"]
 platform = "Blue Team Labs Online"
 vulnerability_type = [] 

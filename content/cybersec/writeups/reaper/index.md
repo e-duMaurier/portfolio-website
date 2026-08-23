@@ -2,8 +2,7 @@
 title = "Reaper"
 date = 2024-11-11T10:01:33+01:00
 lastmod = 2025-08-02T23:07:32+01:00
-categories = ["Cybersercurity", "Writeup", "HTB", "Sherlock"]
-tags = ["Cybersercurity", "Writeup", "HTB", "Sherlock"]
+tags = ["Cybersecurity", "Writeup", "HTB", "Sherlock"]
 platform = "Hack Thje Box"
 difficulty = "Very Easy"
 vulnerability_type = [] 

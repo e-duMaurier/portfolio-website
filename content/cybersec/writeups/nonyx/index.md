@@ -2,7 +2,6 @@
 title = "Nonyx"
 date = 2024-11-15T18:33:33+01:00
 lastmod = 2025-08-02T23:07:51+01:00
-categories = ["Cybersercurity", "Writeup", "BTLO", "Reverse Engineering", "Investigation"]
 tags = ["Volatility 2", "Malfind", "Strings", "File", "T1014"]
 platform = "Blue Team Labs Online"
 difficulty = "Easy"

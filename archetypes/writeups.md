@@ -2,7 +2,6 @@
 title = '{{ replace .Name "-" " " | title }}'
 date = {{ .Date }}
 lastmod = {{ .Date }}
-categories = [""]
 tags = []                    # e.g., ["SQL Injection", "Nmap", "Metasploit"]
 platform = ""                # e.g., "TryHackMe", "Hack The Box", "VulnHub"
 vulnerability_type = []      # e.g., ["SQL Injection", "XSS", "RCE"]

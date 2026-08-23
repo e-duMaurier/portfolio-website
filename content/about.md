@@ -2,7 +2,6 @@
 title = "About Me"
 date = '2025-08-02T19:00:00'
 lastmod = '2026-07-14T23:17:00'
-categories = ["About Me"]
 tags = []
 draft = false
 +++

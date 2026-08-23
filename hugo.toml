@@ -3,10 +3,13 @@ locale = 'en-uk'
 title = 'Duma Labs'
 theme = 'duma-theme'
 relativeURLS = true
+pluralizelisttitles = false
+
+[taxonomies]
+  tag = 'tags'
 
 [security]
   allowContent = ['^text/html$', '.*']
-pluralizelisttitles = false
 
 # --- Menu Configuration ---
 [menu]

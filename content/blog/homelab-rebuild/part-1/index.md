@@ -4,7 +4,6 @@ subtitle = "Why I am resetting and rebuilding my homelab"
 description = "Part 1 of a series of blog posts going through building my homelab, and the hardware, applications and services I will be using."
 date = 2026-02-25T22:03:49Z
 lastmod = 2026-02-25T22:03:49Z
-categories = ["blog", "homelab"] # ["blogging", "general"]
 tags = ["linux", "build-log"] # ["tech", "opinion"]
 draft = false
 +++

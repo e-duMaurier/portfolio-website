@@ -180,3 +180,32 @@ blockquote p {
 .dark footer .mb-3 a:focus {
   color: #c0c0c0 !important;
 }
+
+.post-tags {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.post-tags>i {
+  color: var(--text-secondary);
+}
+
+.tag-pill {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary) !important;
+  font-size: 0.85rem;
+}
+
+.tag-pill:hover,
+.tag-pill:focus {
+  color: var(--link-color) !important;
+  border-color: var(--link-color);
+  text-decoration: none;
+}

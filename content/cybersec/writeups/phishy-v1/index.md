@@ -2,7 +2,6 @@
 title = "Phishy V1"
 date = 2024-11-22T16:36:33+01:00
 lastmod = 2025-08-02T23:07:45+01:00
-categories = ["Cybersercurity", "Writeup", "BTLO", "Security Operations", "Investigation"]
 tags = ["Web Browser", "Text Editor", "Linux CLI", "T1566", "T1598"]
 platform = "Blue Team Labs Online"
 difficulty = "Easy"
