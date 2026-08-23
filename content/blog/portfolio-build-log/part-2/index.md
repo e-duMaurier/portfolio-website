@@ -18,7 +18,7 @@ With all that, plus a great user base, a wide range of content, and modules to h
 
 ---
 
-### Installing Hugo
+## Installing Hugo
 
 There are several options for installing Hugo, especially on Linux. There are prebuilt binaries, package managers like Snap or Homebrew, repository packages, and it can be built from source.
 
@@ -74,7 +74,7 @@ hugo v0.151.2-a3574f6f70c9b272e3de53cf976018ee3ff16fd1+extended linux/amd64 Buil
 
 ---
 
-### Creating the Core Project Structure
+## Creating the Core Project Structure
 
 Hugo might lack the fancy GUIs a lot of other applications have, but for a static site generator, it is very simple in its functions. The advantage of a command-line based tool is that single commands can offer multiple functions. The `new` command in Hugo can be used to create new content, themes, or, in this case, a new site.
 
@@ -118,7 +118,7 @@ Hugo created a directory filled with pre-generated files to get started with:
 └── themes
 ```
 
-#### Running the Embedded Webserver
+### Running the Embedded Webserver
 
 The summary suggests using the embedded webserver with the `hugo server --buildDrafts` command. Normally, I would just use `hugo server -D` and access it on `http://localhost:1313/`.
 
@@ -134,7 +134,7 @@ Accessing the page in a browser at this point still results in a 'Page Not Found
 
 ---
 
-### Choosing and Implementing the Theme
+## Choosing and Implementing the Theme
 
 Themes in Hugo are a very versatile feature and can initially feel overwhelming. Apart from the many great free and premium themes already out there, there are several different methods of applying them, including:
 
@@ -147,19 +147,19 @@ Themes in Hugo are a very versatile feature and can initially feel overwhelming.
 
 I weighed up all these options, noting that if a theme is linked to another repository (which can happen with methods like Git submodule), any updates made by the theme creator could potentially affect my site's look and style.
 
-### Designing the Portfolio
+## Designing the Portfolio
 
 The Hugo site is running locally, which means I now have a solid, empty canvas on which to build. The core structure is in place, but currently, the site is rendering with Hugo’s minimal, unstyled default. Until a theme is implemented, the site is effectively empty; the web server is running, but there is no template or content to load.
 
 I reviewed a number of community themes, looking for a simple, portfolio-focused layout. However, since it has been many years since I dabbled with HTML and CSS, I realised I would much rather give making my own minimal theme a shot. This way, I can ensure the site looks how I want it to, has only the features and options I genuinely need, and remains minimal and lightweight by intentionally skipping out on complex, unnecessary components. This will also give me a great opportunity to brush up on my front-end skills.
 
-### Setting Up Git
+## Setting Up Git
 
 With my Ubuntu VM prepped, and the Hugo site structure created, the project is finally at a stable starting point. Before starting on building a custom theme, the most critical step is to set up version control. This ensures I have an instant backup, a clean starting line, and a rollback point if (or when!) I inevitably break something.
 
 ---
 
-### Preparing the Local Git Repository
+## Preparing the Local Git Repository
 
 I navigated into the main project folder I created in Part 3 and initialised Git.
 
@@ -172,7 +172,7 @@ The `git init` command simply creates a hidden `.git` directory inside the proje
 
 ---
 
-### Ignoring Unnecessary Files
+## Ignoring Unnecessary Files
 
 Adopting a modern, efficient workflow means excluding automatically generated files from version control. I need to tell Git to ignore these directories by creating a **`.gitignore`** file.
 
@@ -196,7 +196,7 @@ resources/
 
 ---
 
-### Creating the Remote Repository on GitHub
+## Creating the Remote Repository on GitHub
 
 With the local repository ready, the next step was to create a remote destination for the code. I logged into GitHub and from the dashboard, created a new, empty repository named `portfolio-website`.
 
@@ -206,7 +206,7 @@ I made sure to create it without a `README`, a `license`, or a `.gitignore` file
 
 ---
 
-### The Initial Commit and Push
+## The Initial Commit and Push
 
 Now that everything was organized, it was time for the first commit.
 
@@ -216,7 +216,7 @@ First, I used `git add .` to stage all the source files in the current directory
 git add .
 ```
 
-#### Troubleshooting: Setting Git Identity
+### Troubleshooting: Setting Git Identity
 
 As this was the first time using Git on this VM, the initial `git commit` command failed, letting me know that the Author identity was unknown:
 

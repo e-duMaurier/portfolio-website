@@ -36,7 +36,7 @@ python vol.py --profile=WinXPSP2x86 -f /home/ubuntu/Desktop/BlackEnergy.vnem psl
 
 This gave me a list of processes, with offsets, PIDs, etc, but it didn't show anything obvious that would answer the first question, Which process most likely contains injected code, providing its name, PID, and memory address?. There was more to do to get this answer.
 
-![alt](00_volpy_pslist.jpg)
+![Volatility pslist output listing each running process with its offset, PID, PPID and process name](00_volpy_pslist.jpg)
 
 I next ran the `malfind` command as part of `volatility` to get a view of any potential process injections.
 
@@ -46,7 +46,7 @@ python vol.py --profile=WinXPSP2x86 -f ~/Desktop/BlackEnergy.vnem malfind > ~/De
 
 The results display several processes, along with the PID and memory address, the header including addresses, and the HEX values, as well as some Assembly instructions. Reviewing the results, one in particular stands out. Process `svchost.exe` shows the HEX value `4d5a` in the header, which has the ASCII value `MZ`.
 
-![alt](01_malfind_svchost.jpg)
+![Volatility malfind output highlighting a suspicious svchost.exe memory region with its virtual address range and raw hex bytes](01_malfind_svchost.jpg)
 
 An executable file header, specifically .exe formats, can be identified my the MZ at the start of the header file, which I confirmed with [FileFormat.Info](https://www.fileformat.info/format/exe/corion-mz.htm). Other processes from .exe files do not contain this header, so this would indicate that this process is the victim of Portable Executable Injection.
 
@@ -58,7 +58,7 @@ python vol.py --profile=WinXPSP2x86 -f ~/Desktop/BlackEnergy.vnem malfind -D ~/D
 
 This gave me dump files from all the processes, so to answer question two, I looked for the dump file that had the memory address of the process in the name, in this case `process.0x80ff88d8.0xc30000.dmp`.
 
-![alt](02_process_dump.jpg)
+![File-manager window listing extracted process memory dumps (.dmp files) with associated process names and timestamps](02_process_dump.jpg)
 
 Next, I wanted to get the strings output of the dump file, to look at identifying the filename path referenced. I pushed the output to a text file, for easier review.
 
@@ -68,7 +68,7 @@ strings process.0x80ff88d8.0xc30000.dmp >> dmp_strings.txt
 
 Looking through the text file, there was a lot of binary data. Further down I started seeing the function calls that could be used through, then I got to what appeared to be the start of the PE, and where the MZ header would be. This line of text gave the full path and filename `C:WINDOWSsystem32driversstr.sys`.
 
-![alt](03_filename_path.jpg)
+![Text-editor view of strings extracted from a memory dump, including a driver path such as \??\C:\Windows\System32\drivers\... alongside function names](03_filename_path.jpg)
 
 Question 4 was to find how many functions were hooked, and by which module, using the SSDT plugin. I am still extremely new to this field, having just started learning, so I did have to web search a little to find out more about SSDT. According to the [Volatility Command Reference](https://github.com/volatilityfoundation/volatility/wiki/Command-Reference#ssdt), I found that the plugin will list functions in the native and GUI System Service Descriptor Tables. These tables are basically an array of addresses to kernel routines for 32-bit operating systems, and for 64-bit operating systems, are relative offsets for the same routines.
 
@@ -80,7 +80,7 @@ python vol.py --profile=WinXPSP2x86 -f ~/Desktop/BlackEnergy.vnem ssdt | egrep -
 
 After the process was complete, looking at the text file, I saw two SSDT entries. Both had different addresses, but both had the same number of function calls, and all of them owned by the same HEX value. There were 14 functions hooked, and each owned by module `00004A2A`.
 
-![alt](04_functions.jpg)
+![Table of SSDT entries showing each hooked service routine's address and the ID of the driver module implementing it](04_functions.jpg)
 
 I spent far longer with question 5 than I should have done. I was searching for ways of trying to pass the output of `ssdt` to `modules before I finally realised, it meant just the module that was found in Q4. Too much overthinking the question, and not reading it again, and fully understanding what was being asked.
 
@@ -93,7 +93,7 @@ cat ../modules.txt | grep "00004A2A"
 
 There was only one entry, listed in columns Offset, Name, Base, Size, and File. Based on this, I could see that the base address was `0xff0d1000`.
 
-![alt](05_modules.jpg)
+![Terminal window showing Volatility modules output with each driver's offset, base address, size and name](05_modules.jpg)
 
 Almost at the end, now it was to get the hash in question. For this, I needed to get access to a file, so I went back to the volatility command reference repository I had found. This let me know that the `moddump` plugin will extract a kernel driver to a file, as long as a destination directory was supplied. With using the `–base` tag too, I could provide the base address and just get the particular driver I was looking for.
 
@@ -104,7 +104,7 @@ python vol.py --profile=WinXPSP2x86 -f ~/Desktop/BlackEnergy.vnem moddump --base
 sha256sum ../mod_dump/driver.ff0d1000.sys
 ```
 
-![alt](06_filehash.jpg)
+![Terminal window running sha256sum against the dumped system driver file and displaying the resulting SHA-256 hash](06_filehash.jpg)
 
 ---
 

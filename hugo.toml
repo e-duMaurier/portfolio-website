@@ -11,6 +11,9 @@ pluralizelisttitles = false
 [security]
   allowContent = ['^text/html$', '.*']
 
+[markup.highlight]
+  noClasses = false
+
 # --- Menu Configuration ---
 [menu]
   [[menu.main]]

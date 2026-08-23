@@ -5,3 +5,6 @@
 public/
 resources/
 hugo_stats.json
+
+# Local test artefacts (lighthouse reports etc)
+test/

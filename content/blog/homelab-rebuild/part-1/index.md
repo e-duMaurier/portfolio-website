@@ -8,7 +8,7 @@ tags = ["linux", "build-log"] # ["tech", "opinion"]
 draft = false
 +++
 
-# Why I am rebuilding my homelab environment.
+## Why I am rebuilding my homelab environment.
 
 My homelab was ready for a reset. Backing up my databases, application files, and getting an overhaul. Better planning, design and configuration. While it was originally in place for getting a little practice with some applications, cyber security and infrastructure, it is now getting a fundamental reset, driven by my growing frustration with "Big Tech's" attitudes and practices.
 
@@ -44,9 +44,9 @@ The goal of this reset is clear:
 
 This blog series is going to document every step I am taking, what software and services I am using, and, most importantly, why I'm doing it.
 
-# The Infrastructure
+## The Infrastructure
 
-## Current Hardware
+### Current Hardware
 
 I've been fortunate enough over the years to get my hands on some pretty reasonable, and sometimes cheap, hardware that I will be using in my network.
 The current systems are enough for me to build a well-rounded start to my network and homelab, and enough resources to run and work on my lab, and other projects.
@@ -60,7 +60,7 @@ I also have 3 current VPS solutions, where I have my [Nextcloud](https://nextclo
 | Discovery | Dell PowerEdge R730 | 2x Intel Xeon E5-2690 v4 (14c/28t), 128GB RAM, 3x1TB HDD | Proxmox host |
 | TVI7309X | Mini PC | Intel Celeron N5105 (4c), 8GB RAM, 240GB SSD | OPNSense |
 
-## Domain Configuration
+### Domain Configuration
 
 To help manage and use the applications I will be running in my homelab, I will be using one of my registered domain names. While I could use internal domains, I decided that using subdomains tied to my domain name, would allow me to make sure I could get some real TLS certificates, and would give me the opportunity to experiment a little with DNS.
 
@@ -74,7 +74,7 @@ I still intend to use an internal-only, local domain, for my SOC lab and corpora
 | ext.dumalabs.uk   | External/public facing apps                             |
 | dumalabs.corp     | SOC lab, corporate test environment                     |
 
-## IP Mapping
+### IP Mapping
 
 I am currently using a router provided by my ISP, which is very limited in configuration options. Due to this, VLANs are not currently incorporated, but I am planning on being able to get my infrastructure in place and set up, so when I can replace to a better router option then it will be fairly easy to add the VLANs and enhance the security and routing.
 

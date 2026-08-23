@@ -29,12 +29,12 @@ The zip file contained only one file, an email file ‘A Hope to CoCanDa.eml’,
 I first searched the text representation of the email for the word ‘Received’ so that I could quickly scan the document for any reference to the originating domain.
 I find the line ‘Received: from localhost (emkei[.]cz. [93[.]99[.]104[.]210])’ which indicated the email service used was emkei[.]cz
 
-![alt](00_domain.jpg)
+![Text-editor view of an email's raw source, with line 28 highlighted showing the Received header containing the sending server's domain](00_domain.jpg)
 
 ****The Reply-To Email Address:**** 
 Searching through the document for ‘Reply-To’ pointed me to the email address egeja3921[@]pashter[.]com
 
-![alt](01_reply_to.jpg)
+![Text-editor snippet of the same email source, highlighting the Reply-To header field showing the reply-to address](01_reply_to.jpg)
 
 ****Email Attachments:****
 Opening the email in a mail application, I could now see the message content in the email.
@@ -56,7 +56,7 @@ Checking the downloaded file from the email with the file command, the PDF file 
 file PuzzleToCoCanDa.pdf
 ```
 
-![alt](02_not_pdf.jpg)
+![Terminal window running the file command against a .pdf-named file, with the output revealing it is actually a ZIP archive](02_not_pdf.jpg)
 
 I renamed the PDF document to a zip file, then extracted the contents. This contained 3 new files, named ‘DaughtersCrown’, ‘GoodJobMajor’ and ‘Money.xlsx’.
 Using file filename again to check each file, ‘DaughtersCrown’ returns as a JPEG image, ‘GoodJobMajor’ is a PDF document, and ‘Money.xlsx’ shows it’s a Microsoft Excel 2007+ document.
@@ -64,19 +64,19 @@ Using file filename again to check each file, ‘DaughtersCrown’ returns as a 
 ****Finding the Author:****
 With the files extracted from the attachment, I then ran each file with the exif tool, and ‘GoodJobMajor’ shows that the PDF has the author metadata still attached, showing the author as ‘Pestero Negeja’
 
-![alt](03_author.jpg)
+![Terminal window running exiftool against a PDF, with the Author metadata field highlighted showing an encoded value](03_author.jpg)
 
 ****Discovering the Location:****
 I wanted to find whatever information I could from ‘Money.xlsx’ without opening it directly, so I extracted the file to another directory. Within this directory, inside the ‘xl’ directory, after opening ‘sharedStrings.xml’ in a text editor, there is an entry that appears to be base64 encoded text.
 
-![alt](04_base64.jpg)
+![XML editor open on a document with a long Base64-encoded string highlighted near the bottom of the view](04_base64.jpg)
 
 Using CyberChef, I decoded this string to its plaintext value - ‘The Martian Colony, Beside Interplanetary Spaceport.’
 
 ****Bot Domain:**** 
 Based on the domain in the reply-to email address, I believed this would also be the likely domain of the C&C to control the bots, and would be hosted at pashter[.]com
 
-![alt](05_location.jpg)
+![CyberChef interface decoding a Base64 string, with the decoded plain-text output "The Martian Colony, Beside Interplanetary Spaceport." highlighted at the bottom](05_location.jpg)
 
 ---
 

@@ -18,7 +18,7 @@ My portfolio website began as a simple idea, born while I was following the [Lev
 
 I wanted a setup that was simple, efficient, and easy to maintain. Here is the breakdown of what I chose and my reasoning:
 
-### Web Server & Version Control
+## Web Server & Version Control
 
 To build the site, I went with Hugo, a Static Site Generator. I found that this would keep things simple, secure, and requires very little maintenance once set up.
 
@@ -27,7 +27,7 @@ Eventually, once I have had more experience with setting up and configuring runn
 
 To make updating the blog as smooth as possible, I also wrote a Bash script and set up a CI/CD pipeline with GitHub Actions. This means I only have to push the update from my computer, and GitHub takes care of deploying the changes to the VPS.
 
-### Custom Domain Name & Hosting
+## Custom Domain Name & Hosting
 
 I already had a personalised domain name that I used for hosting my Foundry VTT games, and it made sense to also use this for my portfolio, and give it a more professional feel.
 
@@ -57,7 +57,7 @@ sudo apt update && sudo apt upgrade -y
 
 > **Note:** You'll notice I use `sudo` (SuperUser Do) for system-level commands like updating repositories (`apt update`) or installing software (`apt install`). This is because these commands affect files and directories outside of my personal `$HOME` directory. My normal user account doesn't have the necessary permissions to make these changes. I don't need `sudo` when I'm working with files inside my home directory, but for any system-wide changes, it's essential.
 
-### Essential Tools
+## Essential Tools
 
 Since I chose a minimal Ubuntu Server cloud setup, I didn't have any graphical interface or fancy text editors. I installed my preferred editing tools and terminal utilities.
 
@@ -67,7 +67,7 @@ In most cases, these would already be installed, but because I went for a minimi
 sudo apt install nano vim curl wget -y
 ```
 
-### Generating and Configuring SSH Keys
+## Generating and Configuring SSH Keys
 
 I wanted to ensure my development environment was secure and ready for automated deployment, so the very first thing I did was generate an SSH key for securely communicating with GitHub.
 
@@ -100,7 +100,7 @@ Then I needed to log in to GitHub, to **Settings**, and then **SSH and GPG keys*
 
 This establishes a trust that allows my VM to push code without me needing to type a password every single time.
 
-### Git Installation and User Config
+## Git Installation and User Config
 
 The next step was to make sure Git was installed, so I could track all my code changes:
 
@@ -137,7 +137,7 @@ On the first connection, I accepted the security prompt, which permanently added
 
 ---
 
-### Go for Hugo 
+## Go for Hugo 
 
 Since Hugo is built using the Go programming language, I needed to install the Go environment so the static site generator could run properly.
 First, to avoid any broken installation, I ensured I removed any previous versions of Go from the system:

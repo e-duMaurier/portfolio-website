@@ -1,6 +1,7 @@
 <script>
   (function () {
-    var t = localStorage.getItem('theme');
+    var t = new URLSearchParams(location.search).get('theme');
+    if (t !== 'dark' && t !== 'light') t = localStorage.getItem('theme');
     if (!t && matchMedia('(prefers-color-scheme: dark)').matches) t = 'dark';
     if (t === 'dark') document.documentElement.classList.add('dark');
   })();
@@ -22,3 +23,5 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
 {{- $style := resources.Get "css/style.css" | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+{{- $syntax := resources.Get "css/syntax.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $syntax.RelPermalink }}">

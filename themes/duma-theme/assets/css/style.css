@@ -63,6 +63,10 @@ a:hover {
   background-color: #2d2d2d;
 }
 
+code {
+  color: #c7254e;
+}
+
 /* Navbar toggler - Dark mode */
 .dark .navbar-toggler-icon {
   filter: invert(1);
@@ -189,11 +193,20 @@ blockquote p {
   gap: 0.5rem;
 }
 
-.post-tags > i {
+.post-tags>i {
   color: var(--text-secondary);
 }
 
+main p a,
+main li a,
+main td a,
+blockquote a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 .tag-pill {
+  text-decoration: none;
   display: inline-block;
   padding: 0.25rem 0.75rem;
   border: 1px solid var(--border-color);

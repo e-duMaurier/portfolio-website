@@ -25,15 +25,15 @@ After extracting the provided zip file for the challenge, there are two files, `
 
 Opening the pcap file, then checking one of the DNS queries, the source IP address of 172.17.79.129 has the name Forela-Wkstn001.forela.local. I did not see any DNS records for Forela-Wkstn002, but when looking at the packet capture in Wireshark, I did see the NBNS (NetBIOS Name Service) protocol. So, I selected nbns as the display filter, and this indicated that Wkstn002 has the IP address of `172.17.79.136`.
 
-![alt](00_ip_one.jpg)
+![Wireshark capture window showing a DNS query packet from a workstation, with the source IP, destination IP and queried domain name highlighted](00_ip_one.jpg)
 
 Changing the display filter to smb2, and then using a string filter on the packet list for `AUTH`, Wireshark found a Session Setup Request, with an AUTH for the user Arthur Kyle. Knowing the IP address for Forela-Wkstn002, seeing the communication between this device and IP address 172.17.79.136, would indicate that this was the device being used by the attacker.
 
-![alt](01_ip_two.jpg)
+![Wireshark capture of NetBIOS name-service (NBNS) traffic, showing a workstation name registration with its IP address highlighted in purple](01_ip_two.jpg)
 
 Following the TCP stream from this event, and looking for any SMB2 Connect Request, I then saw numerous attempts to connect to the `\\DC01\Trip` share. To find the port, I then set the display filter to narrow down the source IP to be the attackers’ device, and the destination to be the IP address of Forela-Wkstn001. Then I looked for TCP connections that were around the user login attempt. The TCP packets had the source port `40252`, and reviewing the SMB packets, confirmed that these had the same port value.
 
-![alt](02_port.jpg)
+![Wireshark packet-detail pane focused on a TCP segment, emphasising the source and destination ports and the SMB protocol header](02_port.jpg)
 
 Using `evtx_dump`, I exported the `Security.evtx` file to a JSON file, then opened this in an editor.
 
@@ -43,15 +43,15 @@ evtx_dump -f securityevents.json -o json Security.evtx
 
 Looking through the events, I found the record that contained port `40252`, and this record displayed the LogonID, `0x64a799`, used to log in with the stolen user account. This record also confirmed the username, `arthur.kyle` and the workstation name `FORELA-WKSTN002`.
 
-![alt](03_logon_id.jpg)
+![JSON-style view of a Windows security event log entry, with the TargetLogonId field highlighted showing the logon session identifier](03_logon_id.jpg)
 
 As part of the key:value data that is stored as part of the record, the system time is also logged, so I could identify when the malicious logon occurred, at `2024-07-31T04:55:16.240589Z`.
 
-![alt](04_system_time.jpg)
+![JSON snippet of an event-log record, highlighting the SystemTime field that contains the event timestamp](04_system_time.jpg)
 
 Finally, after the logon, the next record referenced a share name that was accessed. This was confirmed to be part of the same sequence of events due to the matching port number, user name and logon ID as the previous record. The share that was accessed by the attacker was displayed as `\\\\\IPC$`. Taking in to account ’escape’ characters in the code view of the JSON, this would be then converted to `\\IPC$`.
 
-![alt](05_share.jpg)
+![JSON excerpt from a Windows event log showing the ShareName field indicating an IPC$ administrative share](05_share.jpg)
 
 
 ---

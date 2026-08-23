@@ -8,11 +8,11 @@ tags = ["portfolio", "build-log"]
 draft = false
 +++
 
-### Final Deployment Strategy and CI/CD Pipeline
+## Final Deployment Strategy and CI/CD Pipeline
 
 With the custom theme foundation established, this phase focused on migrating the final content and establishing a robust **Continuous Integration/Continuous Deployment (CI/CD)** pipeline using **GitHub Actions** and my existing Dockerised Virtual Private Server (VPS) infrastructure. This setup automates the build and deployment process, ensuring that every time code is pushed to the `main` branch, the live site updates automatically.
 
-### Prerequisites and Strategy
+## Prerequisites and Strategy
 
 The deployment requires three core components, which need to be configured before writing the runner script:
 
@@ -20,7 +20,7 @@ The deployment requires three core components, which need to be configured befor
 2. **Deployment User & SSH Key:** A secure, dedicated SSH keypair for the GitHub Action runner to log into the VPS. This key needed to be stored securely as a **GitHub Secret**.
 3. **SSH Access for Deployment:** The VPS must be configured to accept connections from the runner using this key.
 
-#### Preparing the VPS (Target System)
+### Preparing the VPS (Target System)
 
 **Important Note on Hosting Environment:**
 
@@ -91,7 +91,7 @@ I also needed to create some additional secrets, one for the IP address of my VP
 
 ---
 
-### Creating the GitHub Actions Workflow
+## Creating the GitHub Actions Workflow
 
 The runner defines the actual workflow, and to enable this I created a file named `deploy.yml` inside the repository structure at `.github/workflows/`.
 

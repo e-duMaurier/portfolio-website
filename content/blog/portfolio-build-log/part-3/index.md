@@ -8,11 +8,11 @@ tags = ["portfolio", "build-log"]
 draft = false
 +++
 
-### Creating the Custom Hugo Theme
+## Creating the Custom Hugo Theme
 
 With the foundations of Hugo set up, now it was on to creating the initial base theme, and customising all the parts that I needed to, so the website fit my needs, and how I wanted it too look and feel.
 
-### Initialising the Custom Theme Structure
+## Initialising the Custom Theme Structure
 
 I navigated to the root directory where my Hugo project resides:
 
@@ -93,7 +93,7 @@ Starting the server again and checking the URL confirmed that the default theme 
 ![Page displayed with theme set](./3-new-theme.png)
 ---
 
-### Defining the Base Layout and Dependencies
+## Defining the Base Layout and Dependencies
 
 In the `layouts` directory of the theme, the `baseof.html` file is the main layout file that defines the common structure of all pages for the theme, and on which all other pages will extend.
 
@@ -121,9 +121,9 @@ The initial file is barebones, with very little defined initially:
 
 Instead of editing the common structure here, it makes more sense to edit the referenced partial files (`head.html`, `header.html`, `footer.html`). This ensures consistency across all pages and simplifies maintenance, as any site-wide change only needs to be made in one place.
 
-### Creating Essential Partials and Dependencies
+## Creating Essential Partials and Dependencies
 
-#### Customising and Self-Hosting Bootstrap CSS
+### Customising and Self-Hosting Bootstrap CSS
 
 To give the portfolio a unique look right from the start, I decided to use a customised version of the Bootstrap CSS. I used an external tool, [Bootstrap.build](https://bootstrap.build/themes), to achieve this efficiency and avoid writing hundreds of lines of SASS/SCSS.
 
@@ -184,7 +184,7 @@ blockquote p {
 }
 ```
 
-#### Updating head.html to Link All Resources
+### Updating head.html to Link All Resources
 
 I updated the `layouts/_partials/head.html` file to include links for the Google Fonts and Bootstrap Icons, ensuring they load correctly alongside the customised Bootstrap and my new `style.css` file. The custom CSS file is intentionally linked last, allowing it to easily override previous styles.
 
@@ -207,7 +207,7 @@ I updated the `layouts/_partials/head.html` file to include links for the Google
 
 ![Website displayed with Bootstrap added](./3-add-bootstrap.png)
 
-#### Building the Navigation
+### Building the Navigation
 
 I added my custom Bootstrap-ready HTML to the `layouts/_partials/header.html` file. This structure defines the dynamic navigation using Bootstrap classes and leverages Hugo's menu system (`.Site.Menus.main`).
 
@@ -256,7 +256,7 @@ I added my custom Bootstrap-ready HTML to the `layouts/_partials/header.html` fi
 
 ![Navigation menu displayed on website](./3-style-menu.png)
 
-#### Linking Bootstrap JavaScript in footer.html
+### Linking Bootstrap JavaScript in footer.html
 
 Finally, to ensure the navigation is fully interactive (collapsible menu and dropdowns), I added the script link right before the closing `</body>` tag via the `footer.html` partial.
 
@@ -283,7 +283,7 @@ Finally, to ensure the navigation is fully interactive (collapsible menu and dro
 </footer>
 ```
 
-### Troubleshooting: Fixing the Floating Footer
+## Troubleshooting: Fixing the Floating Footer
 
 After adding the new `footer.html` partial, I noticed a common layout issue: on pages with very little content, the footer would float too high, instead of sticking to the bottom of the browser window.
 
@@ -303,13 +303,13 @@ I updated the `<body>` and `<main>` tags in `baseof.html`:
 
 ![Footer now correctly displayed at the bottom of the page](./3-footer-bottom.png)
 
-### Defining the Navigation and Core Content Layouts
+## Defining the Navigation and Core Content Layouts
 
 To make the site functional, I configured the main navigation menu and defined the primary content templates.
 
 ---
 
-### Setting Up the Main Navigation Menu
+## Setting Up the Main Navigation Menu
 
 I updated the site's title to **'Duma Labs'** and defined the complete navigation structure in the site's root configuration file, `~/portfolio/hugo.toml`. This allows for immediate testing of the menu's functionality and appearance, including the dropdown for "Cybersecurity."
 
@@ -360,7 +360,7 @@ theme = 'portfolio'
 
 ![Menu displayed with new menu items added](./3-new-menu.png)
 
-### Preparing Content and Iterative Styling
+## Preparing Content and Iterative Styling
 
 I replaced the original `bootstrap.min.css` file with a new version that provided a cleaner menu style and better visual foundation. Following this, I created the minimum necessary content structure for layout testing.
 
@@ -402,11 +402,11 @@ I created the required homepage content file `content/_index.html`, and added so
 
 ![Default index content displayed](./3-index.png)
 
-### Defining Core Page Templates
+## Defining Core Page Templates
 
 My previous Hugo site had separate `single.html` and `list.html` pages. To control my new theme layouts precisely, I focused on creating the primary template types based on Hugo's template hierarchy: **`page.html`** for individual static pages and **`section.html`** for all content lists.
 
-#### Static Page Layout page.html
+### Static Page Layout page.html
 
 This template handles standalone content like the "About Me" page. It includes a call to a `terms.html` partial, which will be necessary for displaying taxonomy tags later.
 
@@ -424,7 +424,7 @@ HTML
 {{ end }}
 ```
 
-#### List/Section Layout in section.html
+### List/Section Layout in section.html
 
 This template handles the content archives for Blog, TTRPG, Photography, and Cybersecurity, providing a loop to display a summary of each item.
 
@@ -453,18 +453,18 @@ HTML
 
 After saving the files and restarting the server, a check confirmed the immediate visual changes and functionality.
 
-### Defining Content Archetypes (Front Matter and Structure)
+## Defining Content Archetypes (Front Matter and Structure)
 
 To maintain content consistency and streamline the post-creation process, I created three specialised archetype files in the theme directory (`themes/portfolio/archetypes/`). These files pre-populate content documents with the specific front matter fields and Markdown structure needed for each section (Blog, TTRPG, Cybersecurity).
 
-### Creating Section-Specific Archetypes
+## Creating Section-Specific Archetypes
 
 I created the following archetype files, leaving the default archetype untouched:
 * Blog:`themes/portfolio/archetypes/blog.md` for general posts and articles.
 * Cybersecurity:`themes/portfolio/archetypes/writeups.md` fir technical reports and challenge documentation.
 * TTRPG:`themes/portfolio/archetypes/ttrpg.md` for session logs, reviews, and gaming resources.
 
-#### The Code for the Archetypes
+### The Code for the Archetypes
 
 **`themes/portfolio/archetypes/blog.md`**
 
@@ -511,13 +511,13 @@ Briefly describe the challenge or machine, including its objective and any key i
 
 Detail the steps you took to solve the challenge. Use subheadings for clarity.
 
-### Initial Enumeration:
+## Initial Enumeration:
 Describe the initial reconnaissance phase.
 
-### Exploitation:
+## Exploitation:
 Explain how you gained the initial foothold, detailing the vulnerability and the exploit used.
 
-### Privilege Escalation:
+## Privilege Escalation:
 Detail the steps to escalate privileges, including any local enumeration and the specific exploit or technique.
 
 ---
