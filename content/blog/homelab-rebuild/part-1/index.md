@@ -59,7 +59,7 @@ I also have 3 current VPS solutions, where I have my [Nextcloud](https://nextclo
 | Monolith | TrueNAS Server | Intel i7-4790k (4c/8t), 16GB RAM, 6x2TB HDD, 8TB storage pool | Network storage |
 | Excelsior | Dell PowerEdge R610 | 2x Intel Xeon E5645 (6c/12t), 48GB RAM, 2x900GB HDD | Proxmox host |
 | Discovery | Dell PowerEdge R730 | 2x Intel Xeon E5-2690 v4 (14c/28t), 128GB RAM, 3x1TB HDD | Proxmox host |
-| AE35 | Mini PC (TVI7309X) | Intel Celeron N5105 (4c), 8GB RAM, 240GB SSD | DNS (Technitium), Dynamic DNS |
+| TVI7309X | Mini PC | Intel Celeron N5105 (4c), 8GB RAM, 240GB SSD | OPNSense |
 
 ## Domain Configuration
 
