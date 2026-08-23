@@ -189,7 +189,7 @@ blockquote p {
   gap: 0.5rem;
 }
 
-.post-tags>i {
+.post-tags > i {
   color: var(--text-secondary);
 }
 
@@ -208,4 +208,28 @@ blockquote p {
   color: var(--link-color) !important;
   border-color: var(--link-color);
   text-decoration: none;
+}
+
+.skip-link {
+  position: absolute;
+  top: -3rem;
+  left: 0.5rem;
+  z-index: 1100;
+  padding: 0.5rem 1rem;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color);
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+:focus-visible {
+  outline: 3px solid var(--link-color);
+  outline-offset: 2px;
+}
+
+.text-muted {
+  color: var(--text-secondary) !important;
 }

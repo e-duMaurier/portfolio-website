@@ -1,17 +1,19 @@
 <!doctype html>
-<html
-  lang="{{ site.Language.Locale }}"
-  dir="{{ or site.Language.Direction `ltr` }}"
->
-  <head>
-    {{ partial "head.html" . }}
-  </head>
+<html lang="{{ site.Language.Locale }}" dir="{{ or site.Language.Direction `ltr` }}">
 
-  <body class="d-flex flex-column min-vh-100">
-    <header>{{ partial "header.html" . }}</header>
-    <main class="flex-grow-1">{{ block "main" . }}{{ end }}</main>
-    <footer>
-      {{ partial "footer.html" . }} {{ partial "head/js.html" . }}
-    </footer>
-  </body>
+<head>
+  {{ partial "head.html" . }}
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header>{{ partial "header.html" . }}</header>
+  <main class="flex-grow-1" id="main-content">
+    {{ block "main" . }}{{ end }}
+  </main>
+  <footer>
+    {{ partial "footer.html" . }} {{ partial "head/js.html" . }}
+  </footer>
+</body>
+
 </html>
