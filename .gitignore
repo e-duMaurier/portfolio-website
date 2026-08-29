@@ -8,3 +8,6 @@ hugo_stats.json
 
 # Local test artefacts (lighthouse reports etc)
 test/
+
+# AI assistant working notes (private, not for publication)
+session-notes.md

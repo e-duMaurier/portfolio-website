@@ -3,12 +3,10 @@ title = 'Part 1: rm -rf homelab/'
 subtitle = "Why I am resetting and rebuilding my homelab"
 description = "Part 1 of a series of blog posts going through building my homelab, and the hardware, applications and services I will be using."
 date = 2026-02-25T22:03:49Z
-lastmod = 2026-02-25T22:03:49Z
+lastmod = 2026-08-29T22:03:49Z
 tags = ["linux", "build-log"] # ["tech", "opinion"]
 draft = false
 +++
-
-## Why I am rebuilding my homelab environment.
 
 My homelab was ready for a reset. Backing up my databases, application files, and getting an overhaul. Better planning, design and configuration. While it was originally in place for getting a little practice with some applications, cyber security and infrastructure, it is now getting a fundamental reset, driven by my growing frustration with "Big Tech's" attitudes and practices.
 
@@ -79,22 +77,21 @@ I still intend to use an internal-only, local domain, for my SOC lab and corpora
 I am currently using a router provided by my ISP, which is very limited in configuration options. Due to this, VLANs are not currently incorporated, but I am planning on being able to get my infrastructure in place and set up, so when I can replace to a better router option then it will be fairly easy to add the VLANs and enhance the security and routing.
 
 While not completely strict at the moment, I've laid out my IP planning for where I want certain devices and services. This is the guide, but as with most projects, this will evolve and change over time, depending on needs and situations.  
-| VLAN ID | Purpose | CIDR | Status | Notes |
-| ------- | ----------------------- | ------------- | ------- | -------------------------------------------------------------- |
-| 0 | Hardware Core | 10.0.0.0/24 | Current | Router, switches, APs. ISP router. |
-| 1 | Software Core | 10.1.0.0/24 | Current | Technitium DNS |
-| 2 | Hypervisors & Mgmt | 10.2.0.0/24 | Current | Proxmox hosts, iDRACs. |
-| 3 | Infrastructure Services | 10.3.0.0/24 | Planned | Proxies, Authentik, Logs, Dashboards. |
-| 4 | Databases | 10.4.0.0/24 | Current | Dedicated DB nodes. Internal-only. |
-| 5 | NAS & Storage | 10.5.0.0/24 | Current | TrueNAS, Backup Targets. |
-| 10 | User/Personal Devices | 10.10.0.0/24 | Current | PCs, laptops, printers. |
-| 15 | Restricted Devices | 10.15.0.0/24 | Current | Work laptops, guest Wi-Fi. Isolated. |
-| 30 | Internal Services | 10.30.0.0/24 | Planned | Firefly, Paperless, Booklore, Trilium, Homepage. |
-| 40 | Virtual Machines | 10.40.0.0/24 | Planned | General VMs, Docker Hosts, K8s workers. |
-| 50 | External Services | 10.50.0.0/24 | Planned | External facing services. |
-| 77 | Media Devices | 10.77.0.0/24 | Current | Smart TVs, consoles, streaming boxes. |
-| 88 | Mobile Devices | 10.88.0.0/24 | Current | Phones, tablets. |
-| 120 | Staging/Default DHCP | 10.120.0.0/24 | Current | DHCP range. Unconfigured/untrusted devices. |
-| 180 | IoT & Pi Projects | 10.180.0.0/24 | Future | ESP32, sensor nodes. Highly restricted. |
-| 200 | SOC Lab/Corporate Test | 10.200.0.0/24 | Future | Isolated environment for cybersecurity, malware analysis, GRC. |
-| 210 | VPN/Jump Box | 10.210.0.0/24 | Future | VPN endpoints, jump hosts. |
+
+| VLAN ID | Name | Subnet | Gateway | Purpose | Status |
+|---------|------|--------|---------|---------|--------|
+| 1 | Services | 10.1.0.0/24 | 10.1.0.254 | DNS (Technitium, AD controllers, core services | Planned |
+| 2 | Management | 10.2.0.0/24 | 10.2.0.254 | Proxmox hosts, iDRAC/IPMI, ansible | Planned |
+| 3 | Infrastructure | 10.3.0.0/24 | 10.3.0.254 | MetalLB pool for infra K3s services (Traefik, Authentik, monitoring) | Planned |
+| 4 | Databases | 10.4.0.0/24 | 10.4.0.254 | MariaDB, PostgreSQL | Planned |
+| 5 | Storage | 10.5.0.0/24 | 10.5.0.254 | TrueNAS, backup targets | Planned |
+| 10 | Trusted | 10.10.0.0/24 | 10.10.0.254 | laptop, desktop, phone, tablet, printer. Full access incl. management | Planned |
+| 15 | Guests & Work | 10.15.0.0/24 | 10.15.0.254 | Trusted guests + work laptop. printer, some apps (via Authentik). No management | Planned |
+| 30 | Internal Services | 10.30.0.0/24 | 10.30.0.254 | MetalLB pool for internal K3s services | Planned |
+| 40 | Virtual Machines | 10.40.0.0/24 | 10.40.0.254 | K3s nodes, general Docker hosts | Planned |
+| 50 | External Services | 10.50.0.0/24 | 10.50.0.254 | MetalLB pool for externally-facing K3s services | Planned |
+| 77 | Media | 10.77.0.0/24 | 10.77.0.254 | Media server (Jellyfin, Immich) + media devices (TVs, consoles, streaming boxes) | Planned |
+| 120 | Quarantine | 10.120.0.0/24 | 10.120.0.254 | Untrusted wired/wireless devices — internet + DNS only | Planned |
+| 180 | IoT | 10.180.0.0/24 | 10.180.0.254 | ESP32, sensors, smart home. Restricted. (printer could move here later) | Future |
+| 200 | SOC Lab | 10.200.0.0/24 | 10.200.0.254 | Security/cybersecurity lab. Isolated. | Future |
+| 210 | VPN | 10.210.0.0/24 | 10.210.0.254 | Headscale, VPN infrastructure | Future |

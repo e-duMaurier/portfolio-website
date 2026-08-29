@@ -64,8 +64,24 @@ hugo new cybersec/writeups/my-new-hack.md
 
 The theme's aesthetic is controlled by a customised version of **Bootstrap** and the custom stylesheet:
 
-- **Custom Styles:** `themes/duma-theme/static/css/style.css`
+- **Custom Styles:** `themes/duma-theme/assets/css/style.css`
+- **Generated Syntax Highlighting:** `themes/duma-theme/assets/css/syntax.css`
 - **Base Templates:** `themes/duma-theme/layouts/baseof.html` and the partials within `layouts/_partials/`.
+
+---
+
+## AI-Assisted Development
+
+This project is developed with the help of an AI/LLM coding agent, working in an explicitly assistive role.
+
+**Its purpose is not to write or implement code autonomously.** Instead, the agent:
+
+- answers questions about the codebase, tooling, and web accessibility concepts;
+- helps diagnose and resolve bugs and issues;
+- supports improving existing features through analysis, audits (e.g. axe/Lighthouse runs, WCAG contrast checks) and proposed plans;
+- assists with document tidying, organising, and writing support.
+
+All changes are requested and owned by Emma; the agent never runs git commands, and only edits files when specifically asked. The ground rules for any AI assistant are defined in [`AGENTS.md`](AGENTS.md). The agent also maintains private working notes in `session-notes.md` (gitignored, local only) so any agent can pick up where the last one left off.
 
 ---
 
