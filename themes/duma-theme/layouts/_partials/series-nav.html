@@ -1,0 +1,18 @@
+{{ if eq .Parent.Params.layout "series" }}
+  {{ $series := .Parent.Pages.ByDate }}
+  {{ $idx := -1 }}
+  {{ range $i, $p := $series }}{{ if eq $p $ }}{{ $idx = $i }}{{ end }}{{ end }}
+  {{ $prev := "" }}{{ $next := "" }}
+  {{ if gt $idx 0 }}{{ $prev = index $series (sub $idx 1) }}{{ end }}
+  {{ if lt (add $idx 1) (len $series) }}{{ $next = index $series (add $idx 1) }}{{ end }}
+  <div class="border rounded p-3 my-5">
+    <div class="text-center mb-2">
+      <a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a> — Part {{ add $idx 1 }} of {{ len $series }}
+    </div>
+    <div class="d-flex justify-content-between align-items-center">
+      {{ with $prev }}<a href="{{ .RelPermalink }}">← {{ strings.TrimPrefix (printf "%s: " $.Parent.Title) .Title }}</a>{{ else }}<span class="text-muted">—</span>{{ end }}
+      {{ with $next }}<a href="{{ .RelPermalink }}">{{ strings.TrimPrefix (printf "%s: " $.Parent.Title) .Title }} →</a>{{ else }}<span class="text-muted">—</span>{{ end }}
+    </div>
+  </div>Plan·Big Pickle
+{{ end }}
+/mnt/int/stuff/repo/portfolio-website

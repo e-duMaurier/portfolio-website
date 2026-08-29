@@ -5,9 +5,10 @@
   <p class="text-center lead">{{ . }}</p>
   {{ end }}
   <p class="text-center text-muted small">
-    {{ with .Params.date }}Published {{ .Format "2 January 2006" }}{{ end }} {{ with .Params.lastmod }}{{ if ne . $.Params.date }} · Updated {{ .Format "2 January 2006" }}{{ end }}{{ end }}
+    {{ partial "published-line.html" . }}
   </p>
   <div>{{ .Content }}</div>
+  {{ partial "series-nav.html" . }} 
   {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
 </div>
 {{ end }}

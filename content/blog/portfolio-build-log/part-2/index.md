@@ -1,7 +1,7 @@
 +++
-title = 'Portfolio Build Log: Part 2'
-subtitle = "Hugo Install & Project Creation"
-description = "Portfolio Build Log: Installing Hugo and Creating the Core Project Structure"
+title = 'Part 2: Hugo Install and Project Creation'
+subtitle = "Getting the Hugo project off the ground."
+description = "Installing Hugo, scaffolding the core project structure, picking the theme, and wiring up Git."
 date = 2025-10-26T17:00:13Z
 lastmod = 2025-10-26T17:00:13Z
 tags = ["portfolio", "build-log"]

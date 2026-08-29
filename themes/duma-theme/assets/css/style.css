@@ -5,9 +5,10 @@
   --text-secondary: #3e3f3a;
   --border-color: #222222;
   --link-color: #0066cc;
-
   --table-border: #dfd7ca;
   --table-header-bg: #f8f9fa;
+  --code-bg: #f6f8fa;
+  --code-border: #dfd7ca;
 }
 
 .dark {
@@ -17,9 +18,10 @@
   --text-secondary: #b0b0b0;
   --border-color: #555555;
   --link-color: #6ea8fe;
-
   --table-border: #555555;
   --table-header-bg: #3d3d3d;
+  --code-bg: #1e1e1e;
+  --code-border: #555555;
 }
 
 body {
@@ -58,13 +60,27 @@ a:hover {
 /* Code blocks - Dark mode */
 .dark code,
 .dark pre,
-.dark pre code {
-  color: #e0e0e0;
-  background-color: #2d2d2d;
-}
-
 code {
   color: #c7254e;
+}
+
+.highlight,
+pre {
+  position: relative;
+  background-color: var(--code-bg);
+  border: 1px solid var(--code-border);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+.highlight pre {
+  margin: 0;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  overflow: visible;
 }
 
 /* Navbar toggler - Dark mode */
@@ -183,6 +199,28 @@ blockquote p {
 .dark footer .mb-3 a:hover,
 .dark footer .mb-3 a:focus {
   color: #c0c0c0 !important;
+}
+
+/* Copy button */
+.copy-code {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  background-color: var(--bg-primary);
+  border: 1px solid var(--code-border);
+  border-radius: 0.35rem;
+}
+
+.highlight.has-copy .chroma,
+pre.has-copy {
+  padding-top: 2.75rem;
+  /* room for the button so line 1 isn't covered */
 }
 
 .post-tags {

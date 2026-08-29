@@ -1,0 +1,11 @@
+{{- $displayTitle := strings.TrimPrefix (printf "%s: " .Parent.Title) .Title -}}
+<h3><a href="{{ .RelPermalink }}">{{ $displayTitle }}</a></h3>
+{{ with .Params.subtitle }}
+<p class="lead">{{ . }}</p>
+{{ end }}
+<p class="text-muted small">{{ partial "published-line.html" . }}</p>
+{{ with .Description }}
+<p>{{ . }}</p>
+{{ else }}
+<p>{{ .Summary | plainify | truncate 200 }}</p>
+{{ end }}

@@ -1,7 +1,7 @@
 +++
-title = 'Portfolio Build Log: Part 4'
-subtitle = "Creating the Deployment Pipeline"
-description = "Setting up GitHub Actions for my Blog CI\\CD Pipeline"
+title = 'Part 4: Creating the Deployment Pipeline'
+subtitle = "Shipping the site with an automated pipeline."
+description = "Preparing the VPS and writing the GitHub Actions workflow that builds and deploys the site automatically."
 date = 2025-11-02T15:44:04Z
 lastmod = 2025-11-02T15:44:04Z
 tags = ["portfolio", "build-log"]

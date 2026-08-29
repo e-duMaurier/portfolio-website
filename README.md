@@ -70,6 +70,16 @@ The theme's aesthetic is controlled by a customised version of **Bootstrap** and
 
 ---
 
+## Accessibility
+
+The site aims for **WCAG 2.2 Level AA** conformance in both light and dark
+themes: contrast-checked syntax highlighting, keyboard-operable navigation
+with visible focus, a skip link, and labelled controls. See
+[`ACCESSIBILITY.md`](ACCESSIBILITY.md) for the theme's accessibility
+principles, what is checked, and the standards they come from.
+
+---
+
 ## AI-Assisted Development
 
 This project is developed with the help of an AI/LLM coding agent, working in an explicitly assistive role.

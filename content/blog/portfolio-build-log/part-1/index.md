@@ -1,7 +1,7 @@
 +++
-title = 'Portfolio Build Log: Part 1'
-subtitle = "Tech Stack & Dev VM Setup"
-description = "Portfolio Build Log: Defining the Tech Stack and Building the Ubuntu Dev VM"
+title = 'Part 1: Tech Stack and Dev VM Setup'
+subtitle = "Defining the tech stack and setting up a development VM."
+description = "The reasoning behind the tech choices for this site, and how the Ubuntu development VM was provisioned."
 date = 2025-10-26T16:43:42Z
 lastmod = 2025-10-26T16:43:42Z
 tags = ["portfolio", "build-log"]

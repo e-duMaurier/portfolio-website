@@ -1,7 +1,7 @@
 +++
-title = 'Portfolio Build Log: Part 3'
-subtitle = "Theme Creation & Base Layouts"
-description = "Portfolio Build Log: Initial Theme Creation and Setting Up the Base Templates"
+title = 'Part 3: Theme Creation and Base Layouts'
+subtitle = "Designing the custom theme from scratch."
+description = "Building duma-theme: base layouts, partials, self-hosted Bootstrap, navigation and content templates."
 date = 2025-10-26T21:51:39Z
 lastmod = 2025-10-26T21:51:39Z
 tags = ["portfolio", "build-log"]

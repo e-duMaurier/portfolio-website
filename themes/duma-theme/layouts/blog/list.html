@@ -1,0 +1,33 @@
+{{ define "main" }}
+<div class="container my-5">
+  <h1 class="text-center">{{ .Title }}</h1>
+  {{ with .Params.subtitle }}
+  <p class="text-center lead">{{ . }}</p>
+  {{ end }}
+  {{ with .Description }}
+  <p class="text-center text-muted">{{ . }}</p>
+  {{ end }}
+
+  {{ $ordered := slice }}
+  {{ range $s := .Sections }}
+    {{ $parts := $s.RegularPages.ByDate }}
+    {{ $latest := "" }}
+    {{ range $p := $parts }}{{ $latest = $p }}{{ end }}
+    {{ if $latest }}
+      {{ $ordered = $ordered | append (dict "series" $s "latest" $latest.Date) }}
+    {{ end }}
+  {{ end }}
+
+  {{ range sort $ordered "latest" "desc" }}
+  <div class="mb-5">
+    <h2><a href="{{ .series.RelPermalink }}">{{ .series.Title }}</a></h2>
+    {{ with .series.Params.subtitle }}
+    <p class="lead">{{ . }}</p>
+    {{ end }}
+    {{ with .series.Description }}
+    <p class="text-muted">{{ . }}</p>
+    {{ end }}
+  </div>
+  {{ end }}
+</div>
+{{ end }}
