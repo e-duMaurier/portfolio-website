@@ -23,6 +23,7 @@ As I have my VM template uses a Cloud-Init set up, the VMs are given a dynamic I
 
 The method I use to move from the Cloud-Init to a static IP configuration does not disable the systemd-resolved, does not mask cloud-init services and does not delete /etc/resolve.conf, to avoid breaking the resolver which can break the DNS in containers.
 
+**Backup the netplan config
 ```bash
 sudo mv /etc/netplan/50-cloud-init.yaml /etc/netplan/50-cloud-init.yaml.bak
 ```

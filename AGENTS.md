@@ -63,9 +63,11 @@ purposes:
 
 - `session-notes.md` is gitignored and private; keep it current after
   substantive sessions (it is the agent's memory between sessions).
-- The theme intentionally ships placeholder content under
-  `themes/duma-theme/content/posts/` for anyone adopting the theme — it is
-  not cruft to be removed.
+- The theme ships example content under
+  `themes/duma-theme/exampleSite/content/` as a reference demo for adopters —
+  it is not cruft to be removed. Content placed in a theme's `content/`
+  directory is merged into every site that uses the theme, so demo material
+  must live in `exampleSite/`, never `content/`.
 
 ## 6. Working preferences (settled with the owner)
 

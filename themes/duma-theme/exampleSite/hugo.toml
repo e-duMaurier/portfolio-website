@@ -1,0 +1,29 @@
+baseURL = 'https://example.org/'
+locale = 'en-GB'
+title = 'My Site'
+theme = 'duma-theme'
+themesDir = '../../'
+relativeURLS = true
+pluralizelisttitles = false
+
+[taxonomies]
+  tag = 'tags'
+
+[markup.highlight]
+  noClasses = false
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 10
+
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 20
+
+  [[menu.main]]
+    name = "Blog"
+    url = "/blog/"
+    weight = 30

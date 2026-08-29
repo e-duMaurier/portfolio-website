@@ -55,6 +55,20 @@ built-in support for multi-part **blog series** and custom sections.
    `noClasses = false` makes Chroma emit classes so the theme's hand-tuned
    `assets/css/syntax.css` colours apply.
 
+### Try the example site
+
+For a working reference of a complete setup (Home, About, Blog with posts and
+a series), serve the bundled example site:
+
+```sh
+hugo serve --source themes/duma-theme/exampleSite
+```
+
+The example site lives in `themes/duma-theme/exampleSite/` (its `hugo.toml`
+sets `themesDir = '../../'` to reach the theme). It is a **reference demo only
+— it is never merged into consuming sites**. Build your own content in your
+site's `content/` directory following the sections below.
+
 ## Front matter
 
 Pages and posts use a common set of fields:
@@ -174,9 +188,9 @@ Variations:
 - **Navigation**: responsive navbar with dropdown support; a `skip-link`,
   semantic landmarks and `aria` labels throughout.
 - **Dates** are formatted en-GB (`2 January 2006`) — keep `locale = 'en-GB'`.
-- **Footer**: theme toggle, example links (Hugo, Go) and a copyright that
-  follows `site.Title`. Edit `_partials/footer.html` to replace the example
-  links with your own.
+- **Footer**: theme toggle, social links and copyright. The social links and
+  `Duma Labs` name are hardcoded — edit `_partials/footer.html` to use your
+  own profiles.
 
 ## Layout map
 
@@ -192,8 +206,13 @@ Variations:
 | `_partials/series-nav.html` | Prev/next part box on series pages |
 | `_partials/published-line.html` | The `Published · Updated` line |
 
-## Placeholder content
+## Example site
 
-`themes/duma-theme/content/` ships a minimal demo — Home, About, Blog with
-three example posts and an example series — so the theme renders meaningfully
-out of the box. Replace or delete it once you start adding your own content.
+`themes/duma-theme/exampleSite/content/` ships a minimal reference demo —
+Home, About, Blog with three example posts and an example series — so you can
+see a complete, sensible setup in one place. Serve it with
+`hugo serve --source themes/duma-theme/exampleSite` and browse the structure
+as a template for your own content. It lives outside the theme's `content/`
+directory on purpose: content inside a theme's `content/` directory is merged
+into every site that uses the theme, whereas `exampleSite/` is inert — good
+to know before you add any demo pages to a theme.
