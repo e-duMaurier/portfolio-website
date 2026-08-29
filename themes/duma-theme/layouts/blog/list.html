@@ -29,5 +29,15 @@
     {{ end }}
   </div>
   {{ end }}
+
+  {{ with .RegularPages.ByDate.Reverse }}
+  <hr class="my-5">
+  <h2 class="h3 text-center mb-4">Latest Posts</h2>
+  <ul class="list-unstyled">
+    {{ range . }}
+    <li class="mb-4">{{ partial "post-item.html" . }}</li>
+    {{ end }}
+  </ul>
+  {{ end }}
 </div>
 {{ end }}

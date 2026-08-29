@@ -1,5 +1,5 @@
 baseURL = 'https://example.org/'
-locale = 'en-US'
+locale = 'en-GB'
 title = 'My New Hugo Site'
 
 [menus]
@@ -9,13 +9,13 @@ title = 'My New Hugo Site'
     weight = 10
 
   [[menus.main]]
-    name = 'Posts'
-    pageRef = '/posts'
+    name = 'About'
+    pageRef = '/about'
     weight = 20
 
   [[menus.main]]
-    name = 'Tags'
-    pageRef = '/tags'
+    name = 'Blog'
+    pageRef = '/blog'
     weight = 30
 
 [module]

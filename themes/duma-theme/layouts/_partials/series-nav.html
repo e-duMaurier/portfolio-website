@@ -13,6 +13,5 @@
       {{ with $prev }}<a href="{{ .RelPermalink }}">← {{ strings.TrimPrefix (printf "%s: " $.Parent.Title) .Title }}</a>{{ else }}<span class="text-muted">—</span>{{ end }}
       {{ with $next }}<a href="{{ .RelPermalink }}">{{ strings.TrimPrefix (printf "%s: " $.Parent.Title) .Title }} →</a>{{ else }}<span class="text-muted">—</span>{{ end }}
     </div>
-  </div>Plan·Big Pickle
+  </div>
 {{ end }}
-/mnt/int/stuff/repo/portfolio-website

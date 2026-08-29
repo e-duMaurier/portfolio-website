@@ -4,6 +4,11 @@ date = 2023-01-01T08:00:00-07:00
 draft = false
 +++
 
-Laborum voluptate pariatur ex culpa magna nostrud est incididunt fugiat
-pariatur do dolor ipsum enim. Consequat tempor do dolor eu. Non id id anim anim
-excepteur excepteur pariatur nostrud qui irure ullamco.
+# Welcome
+
+A short summary of what your site is about, who you are, and what you do.
+Edit the placeholder content in `themes/duma-theme/content/` to make this
+theme your own.
+
+The home page is rendered by `layouts/home.html`, which simply outputs the
+content of this `_index.md` file.
