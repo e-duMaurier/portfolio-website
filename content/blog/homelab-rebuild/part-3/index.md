@@ -5,7 +5,7 @@ description = "Setting up Technitium DNS, Cloudflare and NOIP DDNS updaters in D
 date = 2026-08-31T21:21:19+01:00
 lastmod = 2026-08-31T21:21:19+01:00
 tags = ["linux", "build-log", "Technitium", "DNS", "homelab"] # ["tech", "opinion"]
-draft = true
+draft = false
 +++
 
 I have OPNsemse set up and a working internet connection, so it's time to set up the DNS server and a couple of DDNS updaters, so I can use domain names with the dynamic IP address assigned to me from my ISP.
