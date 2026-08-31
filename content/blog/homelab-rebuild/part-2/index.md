@@ -4,7 +4,7 @@ subtitle = "Preparing the foundations for the rebuild"
 description = "Part 2 of my homelab rebuild project. Defining the static IP template, Docker setup  and isntalling OPNsense"
 date = 2026-08-24T18:16:46+01:00
 lastmod = 2026-08-31T18:07:46+01:00
-tags = ["linux", "build-log"]
+tags = ["linux", "build-log", "docker"]
 draft = false
 +++
 
